@@ -1,0 +1,6 @@
+scikit-learn
+flask
+flask_cors
+pandas
+imblearn
+matplotlib
