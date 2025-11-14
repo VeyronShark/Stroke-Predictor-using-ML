@@ -1,14 +1,19 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify
 import pandas as pd
 from joblib import load
 from flask_cors import CORS
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+CLIENT_URL = os.getenv('CLIENT_URL') or 'http;//localhost:5173'
 
 model = load('./stroke_prediction_model.joblib')
 
-app = Flask(__name__, static_folder='../frontend/dist', static_url_path="/")
+app = Flask(__name__)
 CORS(app, resources={
     r"/*": {
-        "origins": "*",
+        "origins": CLIENT_URL,
         "methods": ["GET", "POST", "OPTIONS"],
         "allow_headers": ["Content-Type"]
     }
@@ -33,7 +38,7 @@ def predict():
 
 @app.route('/')
 def home():
-  return send_from_directory(app.static_folder, 'index.html')
+  return "Stroke Prediction API is running."
 
 if __name__ == '__main__':
-  app.run()
+  app.run(host='0.0.0.0', port=5000, debug=True)
