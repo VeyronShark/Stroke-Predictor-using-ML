@@ -50,7 +50,7 @@ const InputModal = ({ onRiskChange }) => {
     setShowModal(false)
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_BASE_URL}/predict`, {
+      const response = await fetch(`http://localhost:5000/predict`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
