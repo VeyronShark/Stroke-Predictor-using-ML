@@ -16,15 +16,18 @@ The application features:
 ## Screenshots
 
 ### Input Form
-![Input Form](screenshots/normal.png)
+<img src="screenshots/normal.png" alt="Input Form" width="50%">
+
 *The main interface where users input their health parameters*
 
 ### Low Risk Prediction
-![No Stroke Risk](screenshots/no_stroke.png)
+<img src="screenshots/no_stroke.png" alt="No Stroke Risk" width="50%">
+
 *Result screen showing low stroke risk with green theme*
 
 ### High Risk Prediction
-![Stroke Risk](screenshots/stroke.png)
+<img src="screenshots/stroke.png" alt="Stroke Risk" width="50%">
+
 *Result screen showing high stroke risk with red theme*
 
 ## Tech Stack
